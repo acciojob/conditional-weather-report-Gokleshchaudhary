@@ -1,19 +1,20 @@
-import React, { useState } from "react";
-import WeatherDisplay from "./WeatherDisplay"; // ✅ correct if both files are in /src
-import "./styles/App.css"; // optional
+import React from "react";
 
-const App = () => {
-  const [weather, setWeather] = useState({
-    temperature: 25,
-    conditions: "Sunny",
-  });
+const WeatherDisplay = ({ weather }) => {
+  const { temperature, conditions } = weather;
+
+  const tempStyle = {
+    color: temperature > 20 ? "red" : "blue",
+  };
 
   return (
     <div>
-      {/* Do not remove the main div */}
-      <WeatherDisplay weather={weather} />
+      <p>
+        Temperature: <span style={tempStyle}>{temperature}</span>
+      </p>
+      <p>Conditions: {conditions}</p>
     </div>
   );
 };
 
-export default App;
+export default WeatherDisplay;
