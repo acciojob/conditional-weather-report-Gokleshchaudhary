@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import WeatherDisplay from "./WeatherDisplay";
-import "./../styles/App.css"; // Optional
+import WeatherDisplay from "./WeatherDisplay"; // ✅ correct if both files are in /src
+import "./styles/App.css"; // optional
 
 const App = () => {
   const [weather, setWeather] = useState({
